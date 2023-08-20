@@ -29,13 +29,13 @@ struct ContentView: View {
     
     var formatIDR: FloatingPointFormatStyle<Double>.Currency{
         return .currency(code: Locale.current.currency?.identifier ?? "IDR")
-    }
+    } // format a double in IDR currency to be able to call computed properties
     
     var body: some View {
         NavigationView{
             Form{
                 Section{
-                    TextField("Amout of tip", value: $bills, format: .currency(code: Locale.current.currency?.identifier ?? "IDR"))
+                    TextField("Amout of tip", value: $bills, format: formatIDR)
                         .keyboardType(.decimalPad)
                         .focused($amountIsFocus)
                     Picker("Number of People", selection: $people){
