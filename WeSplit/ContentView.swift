@@ -62,7 +62,7 @@ struct ContentView: View {
                     Text("Amount per person")
                 }
                 Section{
-                    Text(grandTotal, format: formatIDR)
+                    Text(grandTotal, format: formatIDR) // call computed properties formatIDR
                 } header: {
                     Text("Total amount")
                 }
